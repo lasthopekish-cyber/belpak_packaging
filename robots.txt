@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://lasthopekish-cyber.github.io/belpak_packaging/sitemap.xml
