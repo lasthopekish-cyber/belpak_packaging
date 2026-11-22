@@ -19,7 +19,7 @@ const UPLOAD_FOLDER = 'Belpak website uploads';
 
 const COLUMNS = ['Received', 'Reference', 'Type', 'Name', 'Phone', 'Email', 'Company', 'Product', 'Size / design',
   'Quantity', 'Packaging type', 'Use / industry', 'Customisation', 'Options', 'Dimensions', 'Material / finish',
-  'Branding', 'Timeline', 'Inquiry type', 'Unit price', 'Estimate', 'City', 'PIN', 'Message', 'File', 'Page', 'Status'];
+  'Branding', 'Timeline', 'Inquiry type', 'Unit price', 'Estimate', 'City', 'PIN', 'Message', 'File', 'Page', 'Status', 'Applying for', 'Experience', 'Current salary', 'Expected salary', 'Notice', 'Link'];
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -38,11 +38,11 @@ function doPost(e) {
       const blob = Utilities.newBlob(Utilities.base64Decode(d.fileData), d.fileType || 'application/octet-stream', ref + ' ' + d.fileName);
       fileUrl = folder.createFile(blob).getUrl();
     } else if (d.fileName) { fileUrl = d.fileName + ' (not uploaded)'; }
-    const kinds = { inquiry: 'Bulk inquiry', custom: 'Custom packaging', contact: 'Contact', order: 'Order request' };
+    const kinds = { inquiry: 'Bulk inquiry', custom: 'Custom packaging', contact: 'Contact', order: 'Order request', career: 'Job application' };
     sh.appendRow([new Date(), ref, kinds[d.kind] || d.kind, d.name, "'" + d.phone, d.email, d.company, d.product, d.variant,
       d.quantity, d.packagingType, d.industry, d.customization, (d.options || []).join(', '), d.dimensions, d.finish,
-      d.branding, d.timeline, d.inquiryType, d.unitPrice, d.estimate, d.city, d.pin, d.message || d.description || d.notes,
-      fileUrl, d.source, 'New']);
+      d.branding, d.timeline, d.inquiryType, d.unitPrice, d.estimate, d.city || d.currentCity, d.pin, d.message || d.description || d.notes,
+      fileUrl, d.source, 'New', d.role, d.experience, d.currentCtc, d.expectedCtc, d.notice, d.link]);
     if (NOTIFY_EMAIL) {
       MailApp.sendEmail(NOTIFY_EMAIL, `New ${kinds[d.kind] || 'lead'} — ${d.name}${d.product ? ' — ' + d.product : ''} (${ref})`,
         Object.entries(d).filter(([k, v]) => v && k !== 'fileData').map(([k, v]) => `${k}: ${Array.isArray(v) ? v.join(', ') : v}`).join('\n') + (fileUrl ? `\nfile: ${fileUrl}` : ''));

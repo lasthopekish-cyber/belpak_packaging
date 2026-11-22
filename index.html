@@ -656,6 +656,22 @@ body{background:#FFFDF9}
 .itile span{font-size:14px;font-weight:600;color:var(--navy)}
 .sp-img img[src*="img/mv/"]{inset:4%;width:92%;height:92%;border-radius:8px}
 
+/* Careers */
+.jobs{display:grid;gap:14px}
+.job{background:#fff;border:1px solid #EDE5D6;border-radius:10px;padding:20px 22px;display:grid;gap:10px}
+.job-head{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+.job h3{font-family:var(--f-display);font-size:24px}
+.job-meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:6px;font-size:14px;color:var(--muted);font-weight:600}
+.job-meta span{display:inline-flex;align-items:center;gap:6px}
+.job-meta svg{width:15px;height:15px;color:#B8893A}
+.job-sum{color:var(--muted)}
+.job details summary{cursor:pointer;font-weight:700;color:var(--maroon);font-size:14.5px}
+.job-cols{display:grid;gap:18px;margin-top:12px}
+@media (min-width:760px){.job-cols{grid-template-columns:1fr 1fr}}
+.job-cols h4{font-size:15px;margin-bottom:6px}
+.job-cols ul{margin:0;padding-left:18px;display:grid;gap:5px;color:var(--muted);font-size:15px}
+.trust .link{margin-top:6px;justify-self:start}
+
 </style>
 </head>
 <body>
@@ -740,10 +756,9 @@ body{background:#FFFDF9}
       </div>
       <div><h4>Shop</h4><ul id="footCats"></ul></div>
       <div><h4>Company</h4><ul>
-        <li><a href="#products">All Products</a></li>
-        <li><a href="#custom">Custom Packaging</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#careers">Careers</a></li>
         <li><a href="#catalogues">Catalogues</a></li>
-        <li><a href="#story">Our Story</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#terms">Terms &amp; Conditions</a></li>
         <li><a href="#shipping">Shipping &amp; Returns</a></li>
@@ -4011,6 +4026,108 @@ function viewCustom() {
   </div></section>`;
 }
 
+const JOBS = [
+  { id: "sales-manager", title: "Sales Manager", type: "Full-time", summary: "Grow Belpak's B2B business with sweet shops, hamper makers, wedding planners, corporate gifting teams and brands.",
+    duties: ["Find and win new B2B accounts across Delhi NCR, Uttar Pradesh and other markets", "Manage existing clients, repeat orders and festive-season demand", "Prepare quotations with the production team and follow up to closure", "Meet monthly sales targets and report on the pipeline"],
+    needs: ["Minimum 2–3 years in B2B sales, ideally packaging, printing, gifting or FMCG", "Strong negotiation and follow-up skills", "Comfortable travelling to meet clients", "Good spoken Hindi and working English"] },
+  { id: "tele-caller", title: "Tele Caller", type: "Full-time", summary: "Be the first voice our customers hear — call leads, share catalogues and turn enquiries into orders.",
+    duties: ["Call inbound and Instagram / WhatsApp leads within the day", "Share catalogues, prices and MOQs, and qualify each requirement", "Log every call, follow-up date and outcome in the CRM", "Hand over confirmed orders to the sales and production team"],
+    needs: ["Minimum 2–3 years in tele-calling, inside sales or customer support", "Clear, polite spoken Hindi; basic English", "Comfortable with WhatsApp Business and a CRM or Google Sheets", "Target-driven and organised"] },
+  { id: "product-designer", title: "Product Designer", type: "Full-time", summary: "Design the boxes, hampers and prints that make Belpak packaging stand out.",
+    duties: ["Create box artwork, prints and patterns for new collections and custom client orders", "Prepare print-ready files and dielines with the production team", "Make mock-ups and catalogue visuals", "Adapt client logos and branding to packaging"],
+    needs: ["Minimum 2–3 years in packaging, print or product graphic design", "Strong in CorelDRAW, Adobe Illustrator and Photoshop", "Understanding of dielines, print colours and finishes like foil and emboss", "A portfolio of packaging or print work"] },
+  { id: "product-developer", title: "Product Developer", type: "Full-time", summary: "Turn new packaging ideas into products we can make well, at the right cost.",
+    duties: ["Develop new box structures, inserts and hamper formats", "Select boards, papers and materials and work out costing", "Make and test samples with the factory team before production", "Work with vendors on materials, finishes and timelines"],
+    needs: ["Minimum 2–3 years in packaging, rigid box, corrugation or product development", "Knowledge of kappa board, duplex, corrugated and rigid box construction", "Hands-on with sampling and costing", "Practical, detail-oriented problem solver"] }
+];
+function viewAbout() {
+  const count = PRODUCTS.length;
+  return `${pageHead("About Us", "About Belpak Packaging", "A third-generation family packaging business in Hathras, Uttar Pradesh, since 1981.", [["About Us"]])}
+  <section class="sec story-intro" style="padding-top:40px"><div class="wrap">
+    <div class="prose">
+      <p class="eyebrow">Who we are</p>
+      <p>What began in ${SITE.founded} as a small family initiative in Hathras, Uttar Pradesh, has become a trusted name in packaging across India. Belpak Packaging is now run by the third generation of the same family, led by ${esc(SITE.founder)}, a chemical engineer who brings a technical eye for materials and finishes to a craft the family has practised for more than four decades.</p>
+      <p>Today we make handcrafted Meena boxes and jar hampers, gift hamper and bakery boxes, dry fruit and mithai packaging, and — through our corrugation unit, Maa Vaishno Corrugators — corrugated, printed, offset and mono carton boxes for brands and industry.</p>
+      <p>The belief behind all of it is simple: every box carries emotions, traditions and memories, so it should be made with care.</p>
+      <div class="cta-row" style="margin-top:8px"><a class="btn btn-red" href="#products">Explore our products</a><a class="btn btn-line" href="#careers">Work with us</a></div>
+    </div>
+    <div class="frame" style="aspect-ratio:16/10;--pad:0px"><img src="img/hero/ban-meena.webp" alt="Belpak Meena boxes and jar train" style="object-fit:cover" loading="lazy"></div>
+  </div></section>
+  <section class="highlights" aria-label="Belpak in numbers"><div class="wrap">
+    <div class="hl">${icon("i-award")}<div><b>Since 1981</b><span>Over four decades</span></div></div>
+    <div class="hl">${icon("i-boxes")}<div><b>${count} products</b><span>Across ${CATS.length} collections</span></div></div>
+    <div class="hl">${icon("i-brush")}<div><b>Two units</b><span>Gift packaging &amp; corrugation</span></div></div>
+    <div class="hl">${icon("i-truck")}<div><b>Pan-India</b><span>Delivery from Hathras, U.P.</span></div></div>
+  </div></section>
+  <section class="sec" aria-labelledby="unitsTitle"><div class="wrap">
+    <div class="sec-title"><h2 id="unitsTitle">What We Make</h2></div>
+    <div class="trust">
+      <div><h3>Gift &amp; Luxury Packaging</h3><p>Meena boxes, Rajwadi and Mor boxes, jar hampers, gift hamper boxes, purse boxes and keepsake suitcases for weddings, festivals and gifting.</p><a class="link" href="#c-luxury">Meena boxes ${arrow}</a></div>
+      <div><h3>Food &amp; Sweet Packaging</h3><p>Dry fruit kappa boxes, mithai boxes, bakery and treat boxes, and box-with-bag sets for sweet shops, bakeries and food brands.</p><a class="link" href="#c-dryfruit">Dry fruit boxes ${arrow}</a></div>
+      <div><h3>Corrugated &amp; Cartons</h3><p>3, 5 and 7 ply corrugated boxes, printed and offset boxes, mono cartons and pharmaceutical boxes from our corrugation unit.</p><a class="link" href="#c-corrugated">Corrugated boxes ${arrow}</a></div>
+    </div>
+  </div></section>
+  <section class="sec on-navy" aria-labelledby="tlTitle"><div class="wrap">
+    <div class="sec-title"><p class="eyebrow">Our journey</p><h2 id="tlTitle" style="color:#fff">A Legacy of Trust</h2></div>
+    <div class="timeline">${TIMELINE.map(([y, h, t]) => `<div class="tl"><b>${y}</b><h3>${h}</h3><p>${t}</p></div>`).join("")}</div>
+  </div></section>
+  <section class="sec" aria-labelledby="valTitle"><div class="wrap">
+    <div class="sec-title"><h2 id="valTitle">Our Values</h2></div>
+    <div class="values">${[["Heritage", "Rooted in tradition, inspired by India's rich artistic legacy."], ["Craftsmanship", "Careful handcrafted workmanship in every Meena box."], ["Quality", "Premium materials and strict quality standards."], ["Trust", "Built on decades of trust, loyalty and customer satisfaction."], ["Delivery", "Timely delivery with advanced production capabilities."]].map(([h, t]) => `<div><h3>${h}</h3><p>${t}</p></div>`).join("")}</div>
+  </div></section>
+  <section class="sec tight on-paper"><div class="wrap igstrip">
+    <div style="display:grid;gap:8px"><p class="eyebrow">We're hiring</p><h2 style="font-family:var(--f-display);font-size:clamp(22px,2.6vw,32px)">Build the next generation of Belpak with us</h2><p class="lede">Open roles: ${JOBS.map(j => j.title).join(", ")}.</p></div>
+    <div class="cta-row"><a class="btn btn-red" href="#careers">View open roles</a></div>
+  </div></section>`;
+}
+function viewCareers() {
+  return `${pageHead("Careers", "Careers at Belpak Packaging", "Join a growing, third-generation packaging business in Hathras. Salary as per experience.", [["Careers"]])}
+  <section class="sec" style="padding-top:32px"><div class="wrap" style="display:grid;gap:30px">
+    <div class="trust">
+      <div><h3>Grow with a family business</h3><p>Work directly with the owners on real decisions, from new collections to big client orders.</p></div>
+      <div><h3>Salary as per experience</h3><p>Pay is based on your experience and skills, discussed openly at the interview.</p></div>
+      <div><h3>Learn the whole craft</h3><p>See packaging end to end — design, sampling, production, sales and delivery.</p></div>
+    </div>
+    <div class="sec-title" style="margin-bottom:0"><h2>Open Positions</h2><p>${JOBS.length} roles · Hathras, Uttar Pradesh · Minimum 2–3 years' experience</p></div>
+    <div class="jobs">${JOBS.map(j => `<article class="job" id="job-${j.id}">
+      <div class="job-head"><div><h3>${esc(j.title)}</h3><p class="job-meta"><span>${icon("i-pin")} Hathras, U.P.</span><span>${icon("i-award")} 2–3+ years</span><span>₹ Salary as per experience</span><span>${esc(j.type)}</span></p></div>
+      <button class="btn btn-red btn-sm" type="button" data-apply="${j.id}">Apply Now</button></div>
+      <p class="job-sum">${esc(j.summary)}</p>
+      <details><summary>Role details</summary><div class="job-cols"><div><h4>What you'll do</h4><ul>${j.duties.map(d => `<li>${esc(d)}</li>`).join("")}</ul></div><div><h4>What we're looking for</h4><ul>${j.needs.map(d => `<li>${esc(d)}</li>`).join("")}</ul></div></div></details>
+    </article>`).join("")}</div>
+    <div class="panel" id="applyPanel"><p class="eyebrow">Apply</p><h2 style="font-family:var(--f-display);font-size:28px;margin:6px 0 16px">Send your application</h2><div id="careerForm"></div></div>
+  </div></section>`;
+}
+function careerFormHTML() {
+  return `<form class="form" id="cr-form" novalidate>
+    ${fld("cr-role", "Position", `<select id="cr-role" required><option value="">Choose a role…</option>${JOBS.map(j => `<option>${esc(j.title)}</option>`).join("")}</select>`, false, "Choose the role you're applying for.")}
+    <div class="fgrid two">${fld("cr-name", "Full name", inp("cr-name", "text", 'autocomplete="name" required'))}${fld("cr-phone", "Phone / WhatsApp", inp("cr-phone", "tel", 'autocomplete="tel" inputmode="tel" required placeholder="+91"'), false, "Enter a valid phone number.")}</div>
+    <div class="fgrid two">${fld("cr-email", "Email", inp("cr-email", "email", 'autocomplete="email" required'), false, "Enter a valid email address.")}${fld("cr-city", "Current city", inp("cr-city", "text", 'autocomplete="address-level2" required'))}</div>
+    <div class="fgrid two">${fld("cr-exp", "Total work experience", `<select id="cr-exp" required><option value="">Choose…</option><option>2 years</option><option>3 years</option><option>4–5 years</option><option>6–10 years</option><option>10+ years</option><option>Less than 2 years</option></select>`, false, "Choose your experience.")}${fld("cr-notice", "Notice period", `<select id="cr-notice"><option value="">Choose…</option><option>Immediate</option><option>15 days</option><option>1 month</option><option>2 months or more</option></select>`, true)}</div>
+    <div class="fgrid two">${fld("cr-ctc", "Current monthly salary", inp("cr-ctc", "text", 'placeholder="e.g. ₹25,000"'), true)}${fld("cr-ectc", "Expected monthly salary", inp("cr-ectc", "text", 'placeholder="e.g. ₹30,000"'), true)}</div>
+    ${fld("cr-link", "LinkedIn or portfolio link", inp("cr-link", "url", 'placeholder="https://"'), true)}
+    <div class="field"><label for="cr-file">Resume <span class="opt">(PDF or Word, up to 5 MB)</span></label><div class="file-drop"><input type="file" id="cr-file" accept=".pdf,.doc,.docx,image/*"><span class="fine" id="cr-file-note">Attach your CV.</span></div></div>
+    ${fld("cr-msg", "About you", `<textarea id="cr-msg" placeholder="Your current role, key work and why you'd like to join Belpak"></textarea>`, true)}
+    <p class="fine" id="cr-exp-note" hidden>These roles ask for at least 2–3 years of experience. You can still apply and we'll keep your profile for future openings.</p>
+    <label class="consent"><input type="checkbox" id="cr-consent" checked> I agree to be contacted by Belpak Packaging about this application.</label>
+    <div class="form-foot"><div class="form-status bad" id="cr-status" role="alert"></div><button class="btn btn-red btn-block" type="submit"><span class="spinner"></span><span>Submit application</span></button></div>
+  </form>`;
+}
+function bindCareerForm(preRole) {
+  $("#careerForm").innerHTML = careerFormHTML();
+  const form = $("#cr-form");
+  if (preRole) $("#cr-role").value = preRole;
+  $("#cr-exp").addEventListener("change", e => { $("#cr-exp-note").hidden = e.target.value !== "Less than 2 years"; });
+  $("#cr-file").addEventListener("change", e => { const f = e.target.files[0]; $("#cr-file-note").textContent = f ? `${f.name} · ${(f.size / 1048576).toFixed(1)} MB${f.size > 5242880 ? " — too large, please send it on WhatsApp instead" : ""}` : "Attach your CV."; });
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const ok = validate([["cr-role", !!val("cr-role")], ["cr-name", !!val("cr-name")], ["cr-phone", validPhone(val("cr-phone"))], ["cr-email", reEmail.test(val("cr-email"))], ["cr-city", !!val("cr-city")], ["cr-exp", !!val("cr-exp")]]);
+    if (!ok || !$("#cr-consent").checked) { const s = $("#cr-status"); s.textContent = ok ? "Please agree to be contacted so we can reply." : "Please check the highlighted fields."; s.classList.add("show"); return; }
+    const file = await readFile($("#cr-file"));
+    const lead = { kind: "career", role: val("cr-role"), name: val("cr-name"), phone: val("cr-phone"), email: val("cr-email"), currentCity: val("cr-city"), experience: val("cr-exp"), notice: val("cr-notice"), currentCtc: val("cr-ctc"), expectedCtc: val("cr-ectc"), link: val("cr-link"), message: val("cr-msg"), consent: true, fileName: file.fileName || "", fileType: file.fileType || "", fileData: file.tooBig ? "" : (file.fileData || "") };
+    runSubmit(form, "cr-status", lead, html => { $("#careerForm").innerHTML = html; $("#applyPanel").scrollIntoView({ block: "start" }); });
+  });
+}
 function viewStory() {
   return `${pageHead("Our story", "Three generations of boxes that impress.", null, [["Our Story"]])}
   <section class="sec story-intro" style="padding-top:56px"><div class="wrap">
@@ -4204,25 +4321,25 @@ async function submitLead(lead, key) {
 function leadSummary(lead) {
   const L = [];
   const add = (k, v) => { if (v) L.push(`${k}: ${v}`); };
-  const titles = { inquiry: "Bulk inquiry", custom: "Custom packaging request", contact: "Website message", order: "Order request" };
+  const titles = { inquiry: "Bulk inquiry", custom: "Custom packaging request", contact: "Website message", order: "Order request", career: "Job application" };
   L.push(`Hello Belpak Packaging — ${titles[lead.kind]} from the website.`);
-  add("Name", lead.name); add("Company", lead.company); add("Product", lead.product); add("Size / design", lead.variant);
+  add("Name", lead.name); add("Applying for", lead.role); add("Experience", lead.experience); add("Current city", lead.currentCity); add("Current salary", lead.currentCtc); add("Expected salary", lead.expectedCtc); add("Notice period", lead.notice); add("LinkedIn / portfolio", lead.link); add("Company", lead.company); add("Product", lead.product); add("Size / design", lead.variant);
   add("Quantity", lead.quantity); add("Packaging type", lead.packagingType); add("Use / industry", lead.industry);
   add("Customisation", lead.customization); add("Options", (lead.options || []).join(", ")); add("Dimensions", lead.dimensions);
   add("Material / finish", lead.finish); add("Branding", lead.branding); add("Timeline", lead.timeline);
   add("Inquiry type", lead.inquiryType); add("Unit price", lead.unitPrice); add("Estimated value", lead.estimate);
   add("Delivery", [lead.city, lead.pin].filter(Boolean).join(" ")); add("Message", lead.message || lead.description || lead.notes);
-  if (lead.fileName) L.push(`(I have a reference file, ${lead.fileName}, which I'll attach here.)`);
+  if (lead.fileName) L.push(lead.kind === "career" ? `(My resume, ${lead.fileName}, is attached here.)` : `(I have a reference file, ${lead.fileName}, which I'll attach here.)`);
   return L.join("\n");
 }
 function resultHTML(lead, res) {
   const summary = leadSummary(lead);
   const wa = waURL(summary);
-  const mail = `mailto:${SITE.email}?subject=${encodeURIComponent((lead.kind === "order" ? "Order request: " : "Inquiry: ") + (lead.product || lead.packagingType || lead.inquiryType || "Website"))}&body=${encodeURIComponent(summary + `\n\nPhone: ${lead.phone || ""}\nEmail: ${lead.email || ""}`)}`;
+  const mail = `mailto:${SITE.email}?subject=${encodeURIComponent((lead.kind === "order" ? "Order request: " : lead.kind === "career" ? "Job application: " + lead.role + " — " + lead.name : "Inquiry: ") + (lead.kind === "career" ? "" : lead.product || lead.packagingType || lead.inquiryType || "Website"))}&body=${encodeURIComponent(summary + `\n\nPhone: ${lead.phone || ""}\nEmail: ${lead.email || ""}`)}`;
   if (res.delivered) {
     return `<div class="result"><span class="mark">${icon("i-check")}</span>
       <h3>Thank you, ${esc(lead.name.split(" ")[0])}.</h3>
-      <p>Your ${lead.kind === "order" ? "order request" : "inquiry"} has reached the Belpak team${res.ref ? ` (reference ${esc(res.ref)})` : ""}. They'll contact you on ${esc(lead.phone)}${lead.email ? " or " + esc(lead.email) : ""} to confirm the details${lead.kind === "order" ? ", final price and payment" : ""}.</p>
+      <p>Your ${lead.kind === "order" ? "order request" : lead.kind === "career" ? "application" : "inquiry"} has reached the Belpak team${res.ref ? ` (reference ${esc(res.ref)})` : ""}. They'll contact you on ${esc(lead.phone)}${lead.email ? " or " + esc(lead.email) : ""} to confirm the details${lead.kind === "order" ? ", final price and payment" : ""}.</p>
       <p class="fine">Want a faster reply? Message the team on WhatsApp too.</p>
       <div class="acts"><a class="btn btn-wa" href="${wa}" target="_blank" rel="noopener">${icon("i-wa")} Continue on WhatsApp</a><button class="btn btn-line" type="button" data-close-modal>Done</button></div></div>`;
   }
@@ -4404,13 +4521,15 @@ document.addEventListener("click", e => {
     $("#featGrid").innerHTML = grid(list, true);
   }
 });
+document.addEventListener("click", e => { const b = e.target.closest("[data-apply]"); if (!b) return; const j = JOBS.find(x => x.id === b.dataset.apply); $("#cr-role").value = j.title; mark("cr-role", true); $("#applyPanel").scrollIntoView({ behavior: "smooth", block: "start" }); setTimeout(() => $("#cr-name").focus({ preventScroll: true }), 500); });
 document.addEventListener("click", e => { const c = e.target.closest(".chip"); if (c) c.setAttribute("aria-pressed", c.getAttribute("aria-pressed") !== "true"); });
 
 /* ---------- header: category nav, mega menu, drawer, search ---------- */
 $("#marquee").innerHTML = ["Thank you for choosing Belpak Packaging — crafting boxes that impress since 1981", "Meena boxes · Gift hampers · Dry-fruit & mithai boxes · Custom printed packaging", "Bulk & custom orders welcome — WhatsApp +91 99771 73464", "Pan-India delivery from Hathras, Uttar Pradesh"].map(t => `<span>${esc(t)}</span>`).join("").repeat(2);
-$("#catnav").innerHTML = `<li><button class="shopall" type="button" id="megaBtn" aria-expanded="false" aria-controls="mega">SHOP ALL ${icon("i-chev", "chev")}</button></li>` + CATS.map(c => `<li><a href="#c-${c.id}" data-nav="c-${c.id}">${esc(c.name)}</a></li>`).join("") + [["#products", "All Products", "products"], ["#custom", "Custom Packaging", "custom"], ["#catalogues", "Catalogues", "catalogues"], ["#story", "Our Story", "story"], ["#contact", "Contact", "contact"]].map(([h, t, n]) => `<li><a href="${h}" data-nav="${n}">${t}</a></li>`).join("");
+const TOP_CATS = ["hampers", "luxury", "dryfruit", "sweets", "bakery", "festive", "corporate", "corrugated"];
+$("#catnav").innerHTML = `<li><button class="shopall" type="button" id="megaBtn" aria-expanded="false" aria-controls="mega">SHOP ALL ${icon("i-chev", "chev")}</button></li>` + TOP_CATS.map(id => CAT_BY_ID[id]).map(c => `<li><a href="#c-${c.id}" data-nav="c-${c.id}">${esc(c.name)}</a></li>`).join("") + [["#about", "About Us", "about"], ["#careers", "Careers", "careers"], ["#contact", "Contact", "contact"]].map(([h, t, n]) => `<li><a href="${h}" data-nav="${n}">${t}</a></li>`).join("");
 $("#megaGrid").innerHTML = CATS.map(c => `<a href="#c-${c.id}"><span><img src="${c.img}" alt="" loading="lazy"></span>${esc(c.name)}</a>`).join("") + `<a href="#products"><span style="background:var(--navy);border-color:var(--navy);color:#fff;font-family:var(--f-display);font-size:18px">View all</span>All Products</a>`;
-$("#drawerNav").innerHTML = `<p class="grp">Shop by category</p>` + CATS.map(c => `<a href="#c-${c.id}"><img src="${c.img}" alt="">${esc(c.name)}</a>`).join("") + `<a href="#products">All Products</a><p class="grp">Belpak</p><a href="#home">Home</a><a href="#custom">Custom Packaging</a><a href="#catalogues">Catalogues</a><a href="#story">Our Story</a><a href="#contact">Contact</a>`;
+$("#drawerNav").innerHTML = `<p class="grp">Shop by category</p><a href="#products">All Products</a>` + CATS.map(c => `<a href="#c-${c.id}"><img src="${c.img}" alt="">${esc(c.name)}</a>`).join("") + `<p class="grp">Belpak</p><a href="#home">Home</a><a href="#about">About Us</a><a href="#careers">Careers</a><a href="#catalogues">Catalogues</a><a href="#contact">Contact</a>`;
 $("#footCats").innerHTML = CATS.map(c => `<li><a href="#c-${c.id}">${esc(c.name)}</a></li>`).join("");
 const megaBtn = $("#megaBtn"), mega = $("#mega");
 function openMega() { mega.classList.add("open"); megaBtn.setAttribute("aria-expanded", "true"); }
@@ -4507,9 +4626,14 @@ function route() {
     app.innerHTML = viewCustom(); nav = "custom";
     $("#customInline").innerHTML = customFormHTML("cp"); bindCustomForm("cp", html => { $("#customInline").innerHTML = html; $("#customInline").scrollIntoView({ block: "start" }); });
     setMeta("Custom Packaging · Belpak Packaging", "Request custom packaging: sizes, printed artwork, finishes, inserts and hamper configurations, confirmed by the Belpak team.");
-  } else if (h === "story") {
-    app.innerHTML = viewStory(); nav = "story";
-    setMeta("Our Story · Belpak Packaging", "Belpak Packaging: a third-generation family packaging business in Hathras, Uttar Pradesh, since 1981.");
+  } else if (h === "about" || h === "story") {
+    app.innerHTML = viewAbout(); nav = "about";
+    setMeta("About Us · Belpak Packaging", "Belpak Packaging: a third-generation family packaging business in Hathras, Uttar Pradesh, since 1981 — gift, food and corrugated packaging.");
+  } else if (h === "careers" || h.startsWith("job-")) {
+    app.innerHTML = viewCareers(); nav = "careers";
+    const j = JOBS.find(x => "job-" + x.id === h); bindCareerForm(j ? j.title : "");
+    if (j) requestAnimationFrame(() => document.getElementById(h).scrollIntoView());
+    setMeta("Careers · Belpak Packaging", "Jobs at Belpak Packaging, Hathras: Sales Manager, Tele Caller, Product Designer, Product Developer. Minimum 2–3 years' experience, salary as per experience.");
   } else if (h === "catalogues") {
     app.innerHTML = viewCatalogues(); nav = "catalogues";
     setMeta("Catalogues · Belpak Packaging", "View and download the Belpak Meena, Gift Hamper & Bakery, and Dry Fruit Kappa catalogues.");
