@@ -1,0 +1,27 @@
+name: Copy Maa Vaishno product photos into the site
+on:
+  push:
+    paths: ["img/mv-sources.txt", ".github/workflows/fetch-mv-images.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download photos
+        run: |
+          mkdir -p img/mv
+          while read -r url name; do
+            [ -z "$url" ] && continue
+            curl -fsSL --retry 3 -A "Mozilla/5.0" -o "img/mv/$name" "$url" || echo "FAILED $url"
+          done < img/mv-sources.txt
+          ls -la img/mv
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add img/mv
+          git diff --cached --quiet || git commit -m "Add Maa Vaishno product photos to img/mv"
+          git push

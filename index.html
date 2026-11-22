@@ -143,7 +143,7 @@ p{margin:0}
 .mega a{min-width:0}
 .mega a span{position:relative;aspect-ratio:1;background:var(--cream);border:2px solid var(--plum);border-radius:4px;display:grid;place-items:center;overflow:hidden}
 .mega a img{position:absolute;inset:10%;width:80%;height:80%;object-fit:contain}
-.mega .wrap{grid-template-columns:repeat(10,minmax(0,1fr))!important}
+.mega .wrap{grid-template-columns:repeat(8,minmax(0,1fr))!important}
 .mega a:hover{color:var(--maroon)}
 
 /* Drawer */
@@ -643,6 +643,17 @@ body{background:#FFFDF9}
 
 .citylinks{display:flex;flex-wrap:wrap;gap:8px}.citylinks a{border:1px solid #E3D3B0;border-radius:999px;padding:7px 13px;text-decoration:none;font-size:14px;font-weight:600;color:var(--navy);background:#fff}.citylinks a:hover{border-color:var(--gold);color:var(--maroon)}
 .seo-home a{color:var(--maroon);font-weight:600}
+/* External (photo) product images: show whole, no crop */
+.pcard-media img.ext,.g-main img.ext{inset:4%;width:92%;height:92%;object-fit:contain;filter:none;border-radius:6px}
+.ctile .box img.ext{filter:none;border-radius:4px;height:60%;bottom:10%}
+.mega a img.ext,.ptile img.ext{filter:none}
+.indgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (min-width:700px){.indgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:1100px){.indgrid{grid-template-columns:repeat(8,minmax(0,1fr))}}
+.itile{display:grid;gap:8px;text-decoration:none;text-align:center}
+.itile img{width:100%;aspect-ratio:1;object-fit:contain;background:#fff;border:1px solid #EDE5D6;border-radius:10px;padding:6px;transition:transform .3s,box-shadow .3s}
+.itile:hover img{transform:translateY(-3px);box-shadow:0 14px 26px -16px rgba(11,31,54,.45)}
+.itile span{font-size:14px;font-weight:600;color:var(--navy)}
 
 </style>
 </head>
@@ -3525,7 +3536,7 @@ const PRODUCTS = [
 ],
 "inStock": true,
 "priceKind": "MRP"
-}
+},{"id": "cb-3ply", "code": null, "name": "3 Ply Corrugated Box", "catalogue": "corrugated", "cats": ["corrugated", "ecom"], "desc": "A three-layer corrugated box for light-weight products, e-commerce orders and retail shipping. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": "3 Ply", "variants": [{"id": "v1", "label": "3 Ply", "price": null, "img": ["https://www.maavaishnocorrugators.com/images/products/products-10.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cb-5ply", "code": null, "name": "5 Ply Corrugated Box", "catalogue": "corrugated", "cats": ["corrugated", "ecom"], "desc": "A five-layer corrugated box with extra strength for heavier goods and stacking during transport. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": "5 Ply", "variants": [{"id": "v1", "label": "5 Ply", "price": null, "img": ["https://www.maavaishnocorrugators.com/images/products/products-8.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cb-7ply", "code": null, "name": "7 Ply Corrugated Box", "catalogue": "corrugated", "cats": ["corrugated", "industrial"], "desc": "A seven-layer corrugated box for heavy, industrial and export shipments that need maximum strength. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": "7 Ply", "variants": [{"id": "v1", "label": "7 Ply", "price": null, "img": ["https://www.maavaishnocorrugators.com/images/products/products-03.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cb-duplex", "code": null, "name": "Duplex Corrugated Box (3 Ply / 5 Ply)", "catalogue": "corrugated", "cats": ["corrugated", "printedbox"], "desc": "Duplex-board corrugated boxes in 3 ply or 5 ply, with a smooth printable outer surface for retail packaging. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": "3 Ply / 5 Ply", "variants": [{"id": "v1", "label": "3 Ply / 5 Ply", "price": null, "img": ["https://www.maavaishnocorrugators.com/Duplex.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cb-heavy", "code": null, "name": "Heavy Duty Box", "catalogue": "corrugated", "cats": ["corrugated", "industrial"], "desc": "Heavy-duty corrugated boxes for industrial parts, machinery components and bulk shipments. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Heavy%20Duty%20N.png"]}], "inStock": true, "priceKind": "Quote"}, {"id": "pb-1color", "code": null, "name": "Single Color Printed Box", "catalogue": "corrugated", "cats": ["printedbox", "corrugated"], "desc": "A corrugated box printed in one colour with your logo, brand name or handling marks. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": "1 colour print", "variants": [{"id": "v1", "label": "1 colour print", "price": null, "img": ["https://www.maavaishnocorrugators.com/Printed%20Corrugator%20box%20SSS.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "pb-2color", "code": null, "name": "Two Color Printed Box", "catalogue": "corrugated", "cats": ["printedbox", "corrugated"], "desc": "A corrugated box printed in two colours for clearer branding on shipping and retail cartons. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": "2 colour print", "variants": [{"id": "v1", "label": "2 colour print", "price": null, "img": ["https://www.maavaishnocorrugators.com/Printed%20box.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "pb-custom", "code": null, "name": "Customised Printed Box", "catalogue": "corrugated", "cats": ["printedbox", "custom"], "desc": "Made-to-order printed corrugated boxes designed around your product, artwork and brand. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Printed%20Boc.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "ob-textile", "code": null, "name": "Offset Printing Textile Packaging Box", "catalogue": "corrugated", "cats": ["offset"], "desc": "Offset-printed boxes for textile and garment packaging, with sharp full-colour artwork. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/offset.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "ob-food", "code": null, "name": "Food Item Box", "catalogue": "corrugated", "cats": ["offset", "sweets"], "desc": "Offset-printed packaging boxes for food items, snacks and namkeen. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Food%20Item.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "ob-electrical", "code": null, "name": "RO, Electrical & Electronics Packaging Box", "catalogue": "corrugated", "cats": ["offset", "industrial"], "desc": "Printed packaging boxes for RO purifiers, electrical goods and electronics. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/products-099.jpeg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "ob-cable", "code": null, "name": "Cables Packaging Box", "catalogue": "corrugated", "cats": ["offset", "industrial"], "desc": "Printed packaging boxes for wires and cables. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Cable%20Box.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "ob-fruit", "code": null, "name": "Vegetables & Fruits Packaging Box", "catalogue": "corrugated", "cats": ["offset"], "desc": "Printed corrugated boxes for fresh vegetables and fruits, from farm to market. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Vegitable%20box11.jpeg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "mc-display", "code": null, "name": "Custom Display Mono Box", "catalogue": "corrugated", "cats": ["mono", "custom"], "desc": "Custom display mono cartons for retail shelves and counters. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Custome%20mone%20carton.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "mc-duplex", "code": null, "name": "Duplex Corrugated Mono Box", "catalogue": "corrugated", "cats": ["mono"], "desc": "Mono cartons in duplex corrugated board for products that need a little more protection. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Duplex%20Cartoon.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "mc-artpaper", "code": null, "name": "Art Paper Mono Box", "catalogue": "corrugated", "cats": ["mono"], "desc": "Mono cartons in art paper with a premium printed finish. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Artcard-box1.jpeg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "mc-fbb", "code": null, "name": "FBB / SBS Board Mono Box", "catalogue": "corrugated", "cats": ["mono", "pharma"], "desc": "Mono cartons in FBB or SBS board, used for cosmetics, pharma and FMCG products. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/fbbsbs.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "mc-shoe", "code": null, "name": "Shoe Box", "catalogue": "corrugated", "cats": ["mono"], "desc": "Printed shoe boxes for footwear brands and retailers. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Shoe%20Box.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "ph-box", "code": null, "name": "Pharmaceutical Box", "catalogue": "corrugated", "cats": ["pharma", "mono"], "desc": "Printed cartons for medicines, tablets, syrups and healthcare products. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Pharmaceutical%20N.png"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cx-bakery", "code": null, "name": "Customised Bakery & Dry Fruit Box", "catalogue": "corrugated", "cats": ["bakery", "dryfruit", "custom"], "desc": "Custom printed boxes for bakeries and dry fruit gifting, made to your size and design. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Customised%20Bakery%20And%20Dry.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cx-festival", "code": null, "name": "Customised Festival Rigid Box", "catalogue": "corrugated", "cats": ["festive", "custom"], "desc": "Custom rigid boxes for Diwali, Rakhi and other festival gifting. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Customised%20Festival%20Rigid%20Box.jpg"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cx-kappa", "code": null, "name": "Kappa Rigid Sweet Box", "catalogue": "corrugated", "cats": ["sweets", "custom"], "desc": "Rigid kappa-board sweet boxes for mithai shops, printed with your shop name. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Kappa%20Rigid%20Sweet%20N.png"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cx-paperbag", "code": null, "name": "Paper Bags", "catalogue": "corrugated", "cats": ["bags"], "desc": "Printed paper carry bags for retail stores, sweet shops and gifting. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/Paper%20Bags%20N.png"]}], "inStock": true, "priceKind": "Quote"}, {"id": "cx-mdf", "code": null, "name": "MDF Boxes", "catalogue": "corrugated", "cats": ["luxury", "custom"], "desc": "MDF wooden boxes for premium gifting and keepsakes. Made to your size and printed to order. Price quoted on your size, ply and quantity.", "moq": null, "unit": "pc", "size": null, "variants": [{"id": "v1", "label": "Custom size", "price": null, "img": ["https://www.maavaishnocorrugators.com/MDF%20Boxes%20N.png"]}], "inStock": true, "priceKind": "Quote"}
 ];
 </script>
 <script>
@@ -3586,7 +3597,12 @@ const CATS = [
   { id: "custom", name: "Custom Printed Packaging", line: "Your size, your artwork, your finish — made to order.", img: "img/p/dry-05-03.webp",
     madeToOrder: "Custom printed packaging is quoted per project. These catalogue boxes are good starting points; the Belpak team confirms materials, finishes and minimum quantities once they see your requirement." },
   { id: "bags", name: "Paper Bags & Retail Packaging", line: "Boxes with matching paper bags, and carry-style packaging.", img: "img/p/dry-11-24.webp",
-    madeToOrder: "Paper bags in the catalogue are supplied as sets with their matching boxes. For standalone printed bags, share size, quantity and artwork." }
+    madeToOrder: "Paper bags in the catalogue are supplied as sets with their matching boxes. For standalone printed bags, share size, quantity and artwork." },
+  { id: "corrugated", name: "Corrugated Boxes", line: "3, 5 and 7 ply, duplex and heavy-duty shipping boxes.", img: "https://www.maavaishnocorrugators.com/Corrugators%20N.png", madeToOrder: "Corrugated boxes are made to your size, ply and quantity. Share the box dimensions and the weight of the product and the team will quote." },
+  { id: "printedbox", name: "Printed Corrugated Boxes", line: "One-colour, two-colour and custom printed cartons.", img: "https://www.maavaishnocorrugators.com/Printed%20Corugator%20N.png", madeToOrder: "Printed boxes are quoted on size, ply, print colours and quantity. Send your logo or artwork with the enquiry." },
+  { id: "offset", name: "Offset Printing Boxes", line: "Full-colour printed boxes for textiles, food, electronics and produce.", img: "https://www.maavaishnocorrugators.com/Vibrant%20Fresh%20Produce%20Packaging%20Display.png", madeToOrder: "Offset printed boxes are made to order. Share your product, size, artwork and quantity for a quote." },
+  { id: "mono", name: "Mono Cartons", line: "Display, duplex, art paper, FBB/SBS and shoe cartons.", img: "https://www.maavaishnocorrugators.com/Mono%20Cartoon.jpg", madeToOrder: "Mono cartons are made to your size, board and print. Share your requirement for a quote." },
+  { id: "pharma", name: "Pharmaceutical Boxes", line: "Printed cartons for medicines, tablets and healthcare products.", img: "https://www.maavaishnocorrugators.com/Pharmaceutical%20N.png", madeToOrder: "Pharmaceutical cartons are made to your size, board and artwork. Share your requirement for a quote." }
 ];
 
 const INDUSTRIES = [
@@ -3644,6 +3660,8 @@ const DISTANCES = [
 
 const FEATURED = ["meena-8001", "bp-gb-107", "jumbo-file", "meena-8006", "bp-gb-121", "kappa-bag", "meena-8025", "bp-gb-108"];
 
+
+const INDUSTRIES_SERVED = ["Automotive", "Electronics", "Food & Bakery", "Hardware", "Health & Beauty", "Packers & Movers", "Pharmaceutical", "Retail Packaging", "Retail Store", "School & Office", "Sporting Goods", "Toys & Hobby", "Textile", "E-Commerce", "Gifting", "Industrial"].map((n, i) => ({ name: n, img: `https://www.maavaishnocorrugators.com/images/industry${i + 1}.jpg` }));
 </script>
 <script>
 /* =====================================================================
@@ -3669,15 +3687,16 @@ const waURL = text => `https://wa.me/${SITE.whatsapp}${text ? "?text=" + encodeU
 const prodImg = (p, v) => (v || p.variants[0]).img[0];
 const PHOTO_ONLY = ["meena-10-0a", "meena-10-1a", "meena-11-1a", "meena-18-0b"];
 const isPhoto = src => PHOTO_ONLY.some(k => src.includes(k + ".webp"));
-const minPrice = p => Math.min(...p.variants.map(v => v.price));
+const isQuote = p => p.variants.every(v => v.price == null);
+const minPrice = p => { const xs = p.variants.map(v => v.price).filter(x => x != null); return xs.length ? Math.min(...xs) : null; };
 const priceText = v => v.priceParts && v.priceParts.length > 1 ? v.priceParts.map(inr).join(" + ") : inr(v.price);
-const catalogueName = p => (CATALOGUE_BY_ID[p.catalogue] || {}).title || "";
+const catalogueName = p => p.catalogue === "corrugated" ? "Corrugated & Printed Boxes" : (CATALOGUE_BY_ID[p.catalogue] || {}).title || "";
 function variantSummary(p) {
   if (p.variants.length === 1) return p.size ? `Size ${esc(p.size)}` : "";
   const noun = p.catalogue === "dry-fruit" ? "designs" : "sizes / options";
   return `${p.variants.length} ${noun}`;
 }
-const photoCls = src => isPhoto(src) ? "photo" : "";
+const photoCls = src => /^https?:/.test(src) ? "ext" : isPhoto(src) ? "photo" : "";
 function swatches(p) {
   const imgs = []; p.variants.forEach(v => { if (!imgs.some(x => x.img === v.img[0])) imgs.push({ img: v.img[0], label: v.label, id: v.id }); });
   if (imgs.length < 2) return `<div class="sw"></div>`;
@@ -3694,7 +3713,7 @@ function card(p) {
       ${p.code ? `<span class="badge code">${esc(p.code)}</span>` : ""}${badge}
     </a>
     ${swatches(p)}
-    <p class="pprice">${many ? "from " : ""}<b>Rs. ${Number(many ? minPrice(p) : v.price).toLocaleString("en-IN")}.00</b> <small>/ pc${p.priceKind === "MRP" ? " MRP" : ""}</small></p>
+    ${isQuote(p) ? `<p class="pprice"><b>Price on request</b> <small>· made to order</small></p>` : `<p class="pprice">${many ? "from " : ""}<b>Rs. ${Number(many ? minPrice(p) : v.price).toLocaleString("en-IN")}.00</b> <small>/ pc${p.priceKind === "MRP" ? " MRP" : ""}</small></p>`}
     <a class="ptitle" href="#p-${p.id}">${esc(p.name)}</a>
     <p class="pvendor">Belpak Packaging</p>
     <p class="pmeta">${variantSummary(p)}</p>
@@ -3714,6 +3733,7 @@ const SLIDES = [
   { cls: "s-4", tag: "Weddings & Festivals", title: "Gifting Fit for a <em>Celebration</em>", text: "Meena chests, Belgadi and Hathi hampers, potli bags and trousseau boxes for the big occasions.", facts: ["Bulk orders", "Pan-India delivery"], cta: ["Shop Wedding Collection", "#c-festive"], img: "img/hero/ban-royal.webp", alt: "Blue and gold Belpak Meena chest with a jar train" }
 ];
 const ROWS = [
+  { title: "Corrugated & Printed Boxes", sub: "Shipping, retail and industrial cartons made to your size", cat: "corrugated", ids: ["cb-3ply", "cb-5ply", "pb-2color", "ob-fruit"] },
   { title: "Royal Meena Boxes & Hampers", sub: "Handcrafted in the Meena tradition", cat: "luxury", ids: ["meena-8007", "meena-8005", "meena-8001", "meena-8025"] },
   { title: "Gift Hampers for Every Celebration", sub: "Festive, wedding, baby shower and return gifts", cat: "hampers", ids: ["bp-gb-121", "bp-gb-111", "bp-gb-122", "bp-gb-134"] },
   { title: "Dry Fruit & Mithai Boxes", sub: "Window, kappa and jumbo boxes with trays", cat: "dryfruit", ids: ["jumbo-file", "dfw-9x9", "kappa-bag", "dfb-12x12"] },
@@ -3755,7 +3775,7 @@ function viewHome() {
     </div>
   </div></section>
 
-  ${ROWS.slice(0, 2).map(row).join("")}
+  ${ROWS.slice(1, 3).map(row).join("")}
 
   <section class="sec tight" aria-label="Promotions"><div class="wrap"><div class="promo">
     ${[["Wedding & Festive Hampers", "Belgadi, Hathi, Mor and Diwali hampers", "Shop Wedding Collection", "#c-festive", "img/p/meena-16-1a.webp", "radial-gradient(420px 220px at 78% 60%,rgba(241,207,125,.28),transparent 70%),linear-gradient(120deg,#3E0F18,#6E1B28)"],
@@ -3765,7 +3785,14 @@ function viewHome() {
       .map(([h, t, b, href, img, bg]) => `<a class="ptile" ${href === "custom" ? 'href="#custom" data-open-custom' : `href="${href}"`} style="background:${bg}"><span class="t"><h3>${h}</h3><p>${t}</p><span class="pill">${b}</span></span><img class="${photoCls(img)}" src="${img}" alt="" loading="lazy"></a>`).join("")}
   </div></div></section>
 
-  ${ROWS.slice(2).map(row).join("")}
+  ${row(ROWS[0])}
+
+  <section class="sec tight on-paper" aria-labelledby="indTitle"><div class="wrap">
+    <div class="sec-title"><h2 id="indTitle">Industries We Serve</h2><p>Corrugated, printed and mono carton packaging for every trade</p></div>
+    <div class="indgrid">${INDUSTRIES_SERVED.map(x => `<a class="itile" href="#c-corrugated"><img src="${x.img}" alt="${esc(x.name)} packaging" loading="lazy"><span>${esc(x.name)}</span></a>`).join("")}</div>
+  </div></section>
+
+  ${ROWS.slice(3).map(row).join("")}
 
   ${catalogueSection(true)}
 
@@ -3853,8 +3880,8 @@ function bindProducts(catId) {
   const run = () => {
     let list = PRODUCTS.filter(p => (!state.cat || p.cats.includes(state.cat)) && (!state.cg || p.catalogue === state.cg));
     if (state.q) { const q = state.q.toLowerCase(); list = list.filter(p => (p.name + " " + (p.code || "") + " " + p.desc + " " + p.variants.map(v => v.label).join(" ")).toLowerCase().includes(q)); }
-    if (state.sort === "asc") list.sort((a, b) => minPrice(a) - minPrice(b));
-    if (state.sort === "desc") list.sort((a, b) => minPrice(b) - minPrice(a));
+    if (state.sort === "asc") list.sort((a, b) => (minPrice(a) ?? 1e9) - (minPrice(b) ?? 1e9));
+    if (state.sort === "desc") list.sort((a, b) => (minPrice(b) ?? -1) - (minPrice(a) ?? -1));
     if (state.sort === "name") list.sort((a, b) => a.name.localeCompare(b.name));
     $("#plist").innerHTML = grid(list, true);
     $("#rc").textContent = `${list.length} product${list.length === 1 ? "" : "s"}`;
@@ -3883,14 +3910,14 @@ function viewProduct(p) {
       <p class="pd-vendor">by <b>Belpak Packaging</b>${p.code ? ` · Code <b>${esc(p.code)}</b>` : ""} · ${esc(catalogueName(p))}</p>
       <div class="pd-price"><b id="pdPrice"></b><small id="pdPriceNote"></small></div>
       ${p.inStock ? "" : `<div class="notice">${icon("i-info")}<span>This design is currently <strong>sold out</strong>. Send a bulk enquiry and the team will tell you when it's back or suggest the closest alternative.</span></div>`}
-      ${p.variants.length > 1 ? `<div class="field"><span class="lbl">${p.catalogue === "dry-fruit" ? "Design" : "Size / option"}: <span id="vName" style="text-transform:none;font-weight:600;color:var(--muted)"></span></span><div class="vlist" id="vlist">${p.variants.map(v => `<button type="button" class="vbtn" data-v="${v.id}" aria-pressed="false"><img src="${v.img[0]}" alt="" loading="lazy"><span style="color:inherit"><b>${esc(v.label)}</b><span>Rs. ${priceText(v).replace(/₹/g, "")}</span></span></button>`).join("")}</div></div>` : ""}
+      ${p.variants.length > 1 ? `<div class="field"><span class="lbl">${p.catalogue === "dry-fruit" ? "Design" : "Size / option"}: <span id="vName" style="text-transform:none;font-weight:600;color:var(--muted)"></span></span><div class="vlist" id="vlist">${p.variants.map(v => `<button type="button" class="vbtn" data-v="${v.id}" aria-pressed="false"><img src="${v.img[0]}" alt="" loading="lazy"><span style="color:inherit"><b>${esc(v.label)}</b><span>${v.price == null ? "On quote" : "Rs. " + priceText(v).replace(/₹/g, "")}</span></span></button>`).join("")}</div></div>` : ""}
       <div class="buybox" id="order">
         ${p.inStock ? `<div class="qty-row">
           <div class="field"><span class="lbl" id="qtyLbl">Quantity (pieces)</span><div class="stepper" role="group" aria-labelledby="qtyLbl"><button type="button" id="qMinus" aria-label="Decrease quantity">−</button><input id="qty" type="number" inputmode="numeric" min="${p.moq || 1}" step="1" value="${p.moq || 1}" aria-labelledby="qtyLbl"><button type="button" id="qPlus" aria-label="Increase quantity">+</button></div></div>
           <div class="subtotal"><small>Estimated value</small><b id="subtotal"></b></div>
         </div>` : ""}
         <div class="buy-ctas">
-          <button class="btn btn-red" type="button" id="orderNow" ${p.inStock ? "" : "disabled"}>Order Now</button>
+          <button class="btn btn-red" type="button" id="orderNow" ${p.inStock ? "" : "disabled"}>${isQuote(p) ? "Get Price Quote" : "Order Now"}</button>
           <button class="btn btn-line" type="button" id="pdEnquire">Enquire — Bulk Inquiry</button>
         </div>
         <a class="btn btn-wa btn-block" id="pdWa" target="_blank" rel="noopener">${icon("i-wa")} Ask about this on WhatsApp</a>
@@ -3930,18 +3957,18 @@ function bindProduct(p) {
     if (v.code) rows.push(["Box code", v.code]);
     if (p.variants.length > 1 && !v.code) rows.push(["Option", v.label]);
     if (p.size) rows.push(["Size", p.size]);
-    rows.push([p.priceKind === "MRP" ? "MRP" : "Price", `${priceText(v)} per piece${v.priceParts && v.priceParts.length > 1 ? " (as listed, e.g. box + bag)" : ""}`]);
+    rows.push(v.price == null ? ["Price", "Quoted on size, material, print and quantity"] : [p.priceKind === "MRP" ? "MRP" : "Price", `${priceText(v)} per piece${v.priceParts && v.priceParts.length > 1 ? " (as listed, e.g. box + bag)" : ""}`]);
     rows.push(["Minimum order", p.moq ? `${p.moq} pieces` : "Confirmed on inquiry"]);
     rows.push(["Availability", p.inStock ? "In catalogue" : "Out of stock"]);
     $("#facts").innerHTML = rows.map(([k, val]) => `<dt>${esc(k)}</dt><dd>${esc(val)}</dd>`).join("");
     $$("#vlist .vbtn").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v.id));
-    $("#pdPrice").textContent = "Rs. " + priceText(v).replace(/₹/g, "") + (v.priceParts && v.priceParts.length > 1 ? "" : ".00");
-    $("#pdPriceNote").textContent = `per piece${p.priceKind === "MRP" ? " (MRP)" : ""} · taxes & delivery extra`;
+    $("#pdPrice").textContent = v.price == null ? "Price on request" : "Rs. " + priceText(v).replace(/₹/g, "") + (v.priceParts && v.priceParts.length > 1 ? "" : ".00");
+    $("#pdPriceNote").textContent = v.price == null ? "made to your size · quoted within a day on WhatsApp" : `per piece${p.priceKind === "MRP" ? " (MRP)" : ""} · taxes & delivery extra`;
     const vn = $("#vName"); if (vn) vn.textContent = v.label;
     $("#pdWa").href = waURL(`Hello Belpak Packaging, I'm interested in ${p.name}${p.code ? " (" + p.code + ")" : ""}${p.variants.length > 1 ? " — " + v.label : ""}. Please share price and availability for my quantity.`);
     updateSubtotal();
   };
-  const updateSubtotal = () => { const s = $("#subtotal"); if (s) s.textContent = inr(PD.v.price * PD.qty); };
+  const updateSubtotal = () => { const s = $("#subtotal"); if (s) s.textContent = PD.v.price == null ? "On quote" : inr(PD.v.price * PD.qty); };
   $$("#vlist .vbtn").forEach(b => b.addEventListener("click", () => { PD.v = p.variants.find(v => v.id === b.dataset.v); renderThumbs(); renderFacts(); }));
   const q = $("#qty");
   if (q) {
@@ -4281,7 +4308,7 @@ function openCustom(preset) {
   openModal("Design Your Custom Packaging", "Tell us what you're packing. Specifications are confirmed with you by the Belpak team.", customFormHTML("cm", preset), () => bindCustomForm("cm", setResult));
 }
 function openOrder(p, v, qty) {
-  if (!p.inStock) return openInquiry(p, v);
+  if (!p.inStock || v.price == null) return openInquiry(p, v);
   openModal("Place an order request", "Belpak confirms availability, final price, GST and delivery before you pay.", orderFormHTML(p, v, qty), () => {
     const form = $("#or-form"), qIn = $("#or-qty"), min = p.moq || 1;
     const upd = () => { $("#or-total").textContent = inr(Math.max(min, +qIn.value || min) * v.price); };
@@ -4445,7 +4472,8 @@ function setLD(obj) {
   s.textContent = obj ? JSON.stringify(obj) : "";
 }
 function setProductLD(p) {
-  const prices = p.variants.map(v => v.price);
+  const prices = p.variants.map(v => v.price).filter(x => x != null);
+  if (!prices.length) return setLD({ "@context": "https://schema.org", "@type": "Product", name: p.name, description: p.desc, brand: { "@type": "Brand", name: "Belpak Packaging" }, image: prodImg(p) });
   setLD({ "@context": "https://schema.org", "@type": "Product", name: p.name, sku: p.code || p.id, description: p.desc,
     brand: { "@type": "Brand", name: "Belpak Packaging" }, image: new URL(prodImg(p), location.href).href,
     offers: { "@type": "AggregateOffer", priceCurrency: "INR", lowPrice: Math.min(...prices), highPrice: Math.max(...prices), offerCount: p.variants.length,
